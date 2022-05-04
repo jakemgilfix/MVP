@@ -13,10 +13,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="h-screen flex flex-col">
+      <div className="min-h-screen h-screen max-h-fit flex flex-col">
         <Navbar />
 
-        <main className="grid items-center h-full w-screen">
+        <main className="grid items-center min-h-fit h-full w-screen mt-[150px]">
           <DropzoneComponent />
         </main>
 

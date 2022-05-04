@@ -26,7 +26,7 @@ export default function HoF() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="h-screen flex flex-col">
+      <div className="min-h-screen flex flex-col">
         <Navbar />
 
         <main className="grid items-center h-full w-screen content-center mt-[120px]">
