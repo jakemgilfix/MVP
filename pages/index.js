@@ -16,7 +16,7 @@ export default function Home() {
       <div className="min-h-screen h-screen max-h-fit flex flex-col">
         <Navbar />
 
-        <main className="grid items-center min-h-fit h-full w-screen mt-[150px]">
+        <main className="grid items-center min-h-fit h-full w-screen mt-[100px]">
           <DropzoneComponent />
         </main>
 

@@ -26,10 +26,10 @@ export default function HoF() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="min-h-screen h-screen flex flex-col">
+      <div className="min-h-screen h-screen max-h-fit flex flex-col">
         <Navbar />
 
-        <main className="grid items-center h-full w-screen content-center mt-[120px]">
+        <main className="grid items-center min-h-fit h-full w-screen mt-[100px]">
           <HoFComponent hotdogs={hofHotDogs} loading={dogsLoading} />
         </main>
 
