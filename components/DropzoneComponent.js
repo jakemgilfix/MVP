@@ -38,8 +38,18 @@ function DropzoneComponent(props) {
 
   useEffect(() => {
     if (label === 'hot dog') {
-      console.log('We got a hot dog!');
-      console.log(files[0])
+      console.log('We got a hot dog! Posting to Firestore!');
+      // console.log(files[0].data);
+      // console.log(labelConfidence);
+      const postData = {
+        image: files[0].data,
+        confidence: labelConfidence
+      };
+      
+      axios.post('/api/hof', postData)
+        .then(console.log)
+        .catch(console.log);
+      // console.log(files[0])
     }
   }, [label])
 

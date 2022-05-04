@@ -2,8 +2,8 @@ import Link from 'next/link';
 
 function Navbar() {
   return (
-    <>
-      <nav className='flex flex-row justify-between items-center flex-wrap bg-indigo-700 p-3 '>
+    <div className="fixed w-screen z-50">
+      <nav className='flex flex-row justify-between items-center flex-wrap bg-indigo-700 p-3'>
         <Link href='/'>
           <a className="ml-2 text-xl text-white font-bold uppercase tracking-wide">
             WUT DIS?
@@ -15,7 +15,7 @@ function Navbar() {
           </a>
         </Link>
       </nav>
-    </>
+    </div>
   );
 }
 

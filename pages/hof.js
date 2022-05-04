@@ -1,8 +1,23 @@
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import HoFComponent from '../components/HoFComponent';
 
 export default function HoF() {
+  const [hofHotDogs, setHofHotDogs] = useState([]);
+  const [dogsLoading, setDogsLoading] = useState(true);
+
+  useEffect(() => {
+    axios.get('/api/hof')
+      .then(({ data: dogs }) => {
+        setHofHotDogs(dogs);
+        setDogsLoading(false);
+        // console.log(`Setting dogs to: ${JSON.stringify(dogs, null, 2)}`)
+      })
+      .catch(console.log);
+  }, [])
+
   return (
     <>
       <Head>
@@ -14,8 +29,8 @@ export default function HoF() {
       <div className="h-screen flex flex-col">
         <Navbar />
 
-        <main className="grid items-center h-full w-screen content-center">
-          <HoFComponent />
+        <main className="grid items-center h-full w-screen content-center mt-[120px]">
+          <HoFComponent hotdogs={hofHotDogs} loading={dogsLoading} />
         </main>
 
       </div>
